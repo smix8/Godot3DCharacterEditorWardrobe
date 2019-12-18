@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/character_editor/Character_Editor_ColorPicker.gd" type="Script" id=1]
+
+
+
+
+[node name="Character_Editor_ColorPicker" type="ColorPicker"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 4.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="color_changed" from="." to="." method="_on_Character_Editor_ColorPicker_color_changed"]

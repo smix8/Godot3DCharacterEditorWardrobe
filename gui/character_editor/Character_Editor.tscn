@@ -1,0 +1,569 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://src/character_editor/Character_Generator.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Label_Big_Roboto.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/Button_medium_Roboto.tres" type="DynamicFont" id=3]
+[ext_resource path="res://characters/base_actor/Actor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/lights/Demo_Lightning.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/character_editor/Character_Asset_Button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/character_editor/Character_Mannequin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://gui/character_editor/Character_Editor_ColorPicker.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gui/character_editor/Namechange_Popup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/images/wardrobes/grace_tshirt.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/wardrobes/grace_hair.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/wardrobes/grace_hair_pony.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/wardrobes/grace_leather_jacket.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/wardrobes/grace_camisole.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/wardrobes/grace_bikini_bottom.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/wardrobes/grace_pjama_pants.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/wardrobes/grace_bikini_top.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/wardrobes/grace_jeans.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/wardrobes/grace_socks.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/wardrobes/grace_shorts.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/wardrobes/grace_shoes.png" type="Texture" id=21]
+[ext_resource path="res://gui/character_editor/Character_Editor_Button_pressed.stylebox" type="StyleBox" id=22]
+[ext_resource path="res://gui/character_editor/Character_Editor_Button_hover.stylebox" type="StyleBox" id=23]
+[ext_resource path="res://gui/character_editor/Character_Editor_Button.stylebox" type="StyleBox" id=24]
+[ext_resource path="res://gui/character_editor/Character_Editor_Property.tscn" type="PackedScene" id=25]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.337255, 0.337255, 0.337255, 1 )
+metallic = 0.5
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id=2]
+material = SubResource( 1 )
+height = 0.2
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.1, 2, 0.1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.854902, 0.854902, 0.854902, 1 )
+
+[node name="Character_Editor" type="Spatial"]
+script = ExtResource( 1 )
+hair_colorpicker_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Head_VBox/Head_Properties/Hair_ColorPicker")
+head_properties_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Head_VBox/Head_Properties")
+torso_properties_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Torso_VBox/Torso_Properties")
+legs_properties_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Legs_VBox/Legs_Properties")
+feet_properties_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Feet_Body_VBox/Feet_Properties")
+head_category_button_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Head_VBox/Head_Button")
+torso_category_button_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Torso_VBox/Torso_Button")
+legs_category_button_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Legs_VBox/Legs_Button")
+feet_category_button_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Feet_Body_VBox/Feet_Button")
+hair_assets_gridcontainer_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Head_Asset_Grid")
+torso_assets_gridcontainer_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Torso_Asset_Grid")
+legs_assets_gridcontainer_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Legs_Asset_Grid")
+feet_assets_gridcontainer_path = NodePath("Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Feet_Asset_Grid")
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+handle_input_locally = false
+msaa = 4
+render_target_update_mode = 3
+
+[node name="Floor" type="MeshInstance" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Demo_Lightning" parent="ViewportContainer/Viewport" instance=ExtResource( 5 )]
+
+[node name="Character_Mannequin" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
+
+[node name="Actor" parent="ViewportContainer/Viewport/Character_Mannequin" instance=ExtResource( 4 )]
+
+[node name="Demo_Pole_Delete_This" type="MeshInstance" parent="ViewportContainer/Viewport/Character_Mannequin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+cast_shadow = 0
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Character_Editor_Menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Character_Editor_Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 100
+custom_constants/margin_top = 100
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Character_Editor_Menu/MarginContainer"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1820.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 200
+
+[node name="Properties_ScrollContainer" type="ScrollContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer"]
+margin_right = 410.0
+margin_bottom = 880.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer"]
+margin_right = 410.0
+margin_bottom = 880.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name_VBox" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer"]
+margin_right = 410.0
+margin_bottom = 81.0
+
+[node name="Name_Button" type="Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Name_VBox"]
+margin_right = 410.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "Name"
+
+[node name="Name_Properties" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Name_VBox"]
+visible = false
+margin_top = 85.0
+margin_right = 410.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Head_VBox" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer"]
+margin_top = 85.0
+margin_right = 410.0
+margin_bottom = 166.0
+
+[node name="Head_Button" type="Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Head_VBox"]
+margin_right = 410.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "Head"
+
+[node name="Head_Properties" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Head_VBox"]
+visible = false
+margin_top = 81.0
+margin_right = 454.0
+margin_bottom = 589.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Haircolor" type="Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Head_VBox/Head_Properties"]
+margin_right = 454.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 3 )
+text = "Haircolor"
+
+[node name="Hair_ColorPicker" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Head_VBox/Head_Properties" instance=ExtResource( 8 )]
+edit_alpha = false
+presets_enabled = false
+presets_visible = false
+
+[node name="Torso_VBox" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer"]
+margin_top = 170.0
+margin_right = 410.0
+margin_bottom = 251.0
+
+[node name="Torso_Button" type="Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Torso_VBox"]
+margin_right = 410.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "Torso"
+
+[node name="Torso_Properties" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Torso_VBox"]
+visible = false
+margin_top = 81.0
+margin_right = 416.0
+margin_bottom = 81.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dummy_DELETE" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Torso_VBox/Torso_Properties" instance=ExtResource( 25 )]
+margin_top = 4.0
+margin_right = 410.0
+display_text = "Dummy_DELETE"
+
+[node name="Legs_VBox" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer"]
+margin_top = 255.0
+margin_right = 410.0
+margin_bottom = 336.0
+
+[node name="Legs_Button" type="Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Legs_VBox"]
+margin_right = 410.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "Legs"
+
+[node name="Legs_Properties" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Legs_VBox"]
+visible = false
+margin_top = 81.0
+margin_right = 416.0
+margin_bottom = 81.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dummy_DELETE" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Legs_VBox/Legs_Properties" instance=ExtResource( 25 )]
+margin_top = 4.0
+margin_right = 410.0
+display_text = "Dummy_DELETE"
+
+[node name="Feet_Body_VBox" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer"]
+margin_top = 340.0
+margin_right = 410.0
+margin_bottom = 421.0
+
+[node name="Feet_Button" type="Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Feet_Body_VBox"]
+margin_right = 410.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "Feet"
+
+[node name="Feet_Properties" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Feet_Body_VBox"]
+visible = false
+margin_top = 81.0
+margin_right = 416.0
+margin_bottom = 81.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dummy_DELETE" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Feet_Body_VBox/Feet_Properties" instance=ExtResource( 25 )]
+margin_top = 4.0
+margin_right = 410.0
+display_text = "Dummy_DELETE"
+
+[node name="Center_ScrollContainer" type="ScrollContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer"]
+margin_left = 610.0
+margin_right = 1020.0
+margin_bottom = 880.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Center_ScrollContainer"]
+margin_right = 410.0
+margin_bottom = 880.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="2D_Character_Dummy" type="Sprite" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Center_ScrollContainer/VBoxContainer"]
+visible = false
+
+[node name="Assets_ScrollContainer" type="ScrollContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer"]
+margin_left = 1220.0
+margin_right = 1720.0
+margin_bottom = 880.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="Assets_VBoxContainer" type="VBoxContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer"]
+margin_right = 488.0
+margin_bottom = 1140.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Hair_Label" type="Label" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_right = 488.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 3 )
+text = "Hair"
+
+[node name="Head_Asset_Grid" type="GridContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_top = 40.0
+margin_right = 488.0
+margin_bottom = 200.0
+columns = 3
+
+[node name="Character_Asset_Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Head_Asset_Grid" instance=ExtResource( 6 )]
+custom_styles/normal = SubResource( 4 )
+asset_id = "grace_hair"
+asset_slot = "hair"
+unlocked = true
+display_name = "Default Hair"
+image = ExtResource( 11 )
+
+[node name="Character_Asset_Button2" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Head_Asset_Grid" instance=ExtResource( 6 )]
+margin_left = 164.0
+margin_right = 324.0
+custom_styles/normal = SubResource( 5 )
+asset_id = "grace_hair_poly"
+asset_slot = "hair"
+display_name = "Ponytail"
+image = ExtResource( 12 )
+
+[node name="Torso_Label" type="Label" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_top = 204.0
+margin_right = 488.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 3 )
+text = "Torso"
+
+[node name="Torso_Asset_Grid" type="GridContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_top = 244.0
+margin_right = 488.0
+margin_bottom = 568.0
+columns = 3
+
+[node name="Character_Asset_Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Torso_Asset_Grid" instance=ExtResource( 6 )]
+custom_styles/normal = SubResource( 6 )
+asset_id = "grace_tshirt"
+asset_slot = "torso"
+unlocked = true
+display_name = "T-Shirt"
+image = ExtResource( 10 )
+
+[node name="Character_Asset_Button2" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Torso_Asset_Grid" instance=ExtResource( 6 )]
+margin_left = 164.0
+margin_right = 324.0
+custom_styles/normal = SubResource( 7 )
+asset_id = "grace_leather_jacket"
+asset_slot = "torso"
+unlocked = true
+display_name = "Leather Jacket"
+image = ExtResource( 13 )
+
+[node name="Character_Asset_Button3" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Torso_Asset_Grid" instance=ExtResource( 6 )]
+margin_left = 328.0
+margin_right = 488.0
+custom_styles/normal = SubResource( 8 )
+asset_id = "grace_camisole"
+asset_slot = "torso"
+unlocked = true
+display_name = "Camisole"
+image = ExtResource( 14 )
+
+[node name="Character_Asset_Button4" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Torso_Asset_Grid" instance=ExtResource( 6 )]
+margin_top = 164.0
+margin_bottom = 324.0
+custom_styles/normal = SubResource( 9 )
+asset_id = "grace_bikini_top"
+asset_slot = "torso"
+unlocked = true
+display_name = "Bikini"
+image = ExtResource( 17 )
+
+[node name="Legs_Label" type="Label" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_top = 572.0
+margin_right = 488.0
+margin_bottom = 608.0
+custom_fonts/font = ExtResource( 3 )
+text = "Legs"
+
+[node name="Legs_Asset_Grid" type="GridContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_top = 612.0
+margin_right = 488.0
+margin_bottom = 936.0
+columns = 3
+
+[node name="Character_Asset_Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Legs_Asset_Grid" instance=ExtResource( 6 )]
+custom_styles/normal = SubResource( 10 )
+asset_id = "grace_jeans"
+asset_slot = "legs"
+unlocked = true
+display_name = "Jeans"
+image = ExtResource( 18 )
+
+[node name="Character_Asset_Button2" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Legs_Asset_Grid" instance=ExtResource( 6 )]
+margin_left = 164.0
+margin_right = 324.0
+custom_styles/normal = SubResource( 11 )
+asset_id = "grace_pjama_pants"
+asset_slot = "legs"
+unlocked = true
+display_name = "Pjama Pants"
+image = ExtResource( 16 )
+
+[node name="Character_Asset_Button3" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Legs_Asset_Grid" instance=ExtResource( 6 )]
+margin_left = 328.0
+margin_right = 488.0
+custom_styles/normal = SubResource( 12 )
+asset_id = "grace_shorts"
+asset_slot = "legs"
+unlocked = true
+display_name = "Shorts"
+image = ExtResource( 20 )
+
+[node name="Character_Asset_Button4" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Legs_Asset_Grid" instance=ExtResource( 6 )]
+margin_top = 164.0
+margin_bottom = 324.0
+custom_styles/normal = SubResource( 12 )
+asset_id = "grace_bikini_bottom"
+asset_slot = "legs"
+unlocked = true
+display_name = "Bikini"
+image = ExtResource( 15 )
+
+[node name="Feet_Label" type="Label" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_top = 940.0
+margin_right = 488.0
+margin_bottom = 976.0
+custom_fonts/font = ExtResource( 3 )
+text = "Feet"
+
+[node name="Feet_Asset_Grid" type="GridContainer" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer"]
+margin_top = 980.0
+margin_right = 488.0
+margin_bottom = 1140.0
+columns = 3
+
+[node name="Character_Asset_Button" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Feet_Asset_Grid" instance=ExtResource( 6 )]
+custom_styles/normal = SubResource( 13 )
+asset_id = "grace_shoes"
+asset_slot = "feet"
+unlocked = true
+display_name = "Shoes"
+image = ExtResource( 21 )
+
+[node name="Character_Asset_Button2" parent="Character_Editor_Menu/MarginContainer/HBoxContainer/Assets_ScrollContainer/Assets_VBoxContainer/Feet_Asset_Grid" instance=ExtResource( 6 )]
+margin_left = 164.0
+margin_right = 324.0
+custom_styles/normal = SubResource( 14 )
+asset_id = "grace_socks"
+asset_slot = "feet"
+unlocked = true
+display_name = "Socks"
+image = ExtResource( 19 )
+
+[node name="Bottom_Menu" type="HBoxContainer" parent="Character_Editor_Menu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -130.0
+margin_right = 300.0
+margin_bottom = -50.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm_Button" type="Button" parent="Character_Editor_Menu/Bottom_Menu"]
+margin_right = 298.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 3 )
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cancel_Button" type="Button" parent="Character_Editor_Menu/Bottom_Menu"]
+margin_left = 302.0
+margin_right = 600.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 3 )
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Namechange_Popup" parent="." instance=ExtResource( 9 )]
+visible = false
+[connection signal="pressed" from="Character_Editor_Menu/MarginContainer/HBoxContainer/Properties_ScrollContainer/VBoxContainer/Name_VBox/Name_Button" to="Namechange_Popup" method="_on_Name_Button_pressed"]
+[connection signal="pressed" from="Character_Editor_Menu/Bottom_Menu/Confirm_Button" to="." method="_on_Confirm_Button_pressed"]
+[connection signal="pressed" from="Character_Editor_Menu/Bottom_Menu/Cancel_Button" to="." method="_on_Cancel_Button_pressed"]
+
+[editable path="ViewportContainer/Viewport/Character_Mannequin"]
+
+[editable path="ViewportContainer/Viewport/Character_Mannequin/Actor"]
