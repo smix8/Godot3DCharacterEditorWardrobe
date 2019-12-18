@@ -17,7 +17,7 @@ extends Spatial
 ### dictionary that holds all asset_id's and their resource loading paths
 ### in a real game should be replaced with an autoload accessable by all other nodes that need to load meshes
 ### dummy placeholders to give you an idea, replace with your own image filenames / asset_id's and mesh resource paths
-var mesh_libary : Dictionary = {
+var mesh_library : Dictionary = {
 	"dummy_item_name_01" : {"slot" : "hair", "path" : "res://assets/meshes/dummy_item_name_01.mesh"},
 	"dummy_item_name_02" : {"slot" : "torso", "path" : "res://assets/meshes/dummy_item_name_02.mesh"},
 	"dummy_item_name_03" : {"slot" : "legs", "path" : "res://assets/meshes/dummy_item_name_03.mesh"},

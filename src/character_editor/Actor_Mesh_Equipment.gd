@@ -163,8 +163,8 @@ func copy_blendshape_values_from_skin_to_equipment(equipment):
 
 func _on_changed_asset(asset_id):
 			
-	### get the asset loadpath from our mesh libary
-	var asset_dict : Dictionary = get_parent().get_parent().get_parent().get_parent().mesh_libary.get(asset_id)
+	### get the asset loadpath from our mesh library
+	var asset_dict : Dictionary = get_parent().get_parent().get_parent().get_parent().mesh_library.get(asset_id)
 	
 	if asset_dict:
 		var slot_name = asset_dict.get("slot")
