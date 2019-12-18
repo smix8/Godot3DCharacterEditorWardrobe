@@ -34,7 +34,7 @@ Prepare your mesh assets by loading them on your skeleton actor with the blendsh
 ### Step 3
 On the begin of the 'Character_Editor' script find the 'mesh_libary' dictionary add key:value pairs of your image_name as key, and your mesh resource path as value
 
-![meshlibary_setup](https://user-images.githubusercontent.com/52464204/71061582-9cd8f100-2168-11ea-8ee1-7bf97791cb8d.jpg)
+![meshlibary_setup](https://user-images.githubusercontent.com/52464204/71075879-167ed800-2185-11ea-9df2-009d9cb6db4e.jpg)
 
 (Optional) I would advice moving the dictionary to an autoload for your full game project to not break paths easily in the future. I did on my own project but couldn't add it to this example and make it stand-alone without breaking a million things. Change the current way of getting the path on around codeline 182 in the 'Actor_Mesh_Equipment' script that needs the 'mesh_libary' to load the new meshes.
 
