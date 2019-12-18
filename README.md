@@ -20,28 +20,44 @@ Example project made with Godot 3.2 beta2
 
 ## Setup | Usage
 
-1) Place your asset images in the '\assets\images\wardrobes' subfolder and give them a unique name to use as an id
+### Step 1
+Place your asset images in the '\assets\images\wardrobes' subfolder and give them a unique name to use as an id
 ( not mandatory for this version but an automatic import for the assets is on the way and this will be the intended folder structure to function )
+
 ![asset_images_setup](https://user-images.githubusercontent.com/52464204/71061545-921e5c00-2168-11ea-896e-4270e87f576f.jpg)
 
-2) Prepare your mesh assets by loading them on your skeleton actor with the blendshapes and then save them as mesh resources in the '\assets\meshes' subfolder
+### Step 2
+Prepare your mesh assets by loading them on your skeleton actor with the blendshapes and then save them as mesh resources in the '\assets\meshes' subfolder
+
 ![mesh_saving](https://user-images.githubusercontent.com/52464204/71061779-18d33900-2169-11ea-860e-a0a5fcf07c4b.jpg)
 
-3) On the begin of the 'Character_Editor' script find the 'mesh_libary' dictionary add key:value pairs of your image_name as key, and your mesh resource path as value
+### Step 3
+On the begin of the 'Character_Editor' script find the 'mesh_libary' dictionary add key:value pairs of your image_name as key, and your mesh resource path as value
+
 ![meshlibary_setup](https://user-images.githubusercontent.com/52464204/71061582-9cd8f100-2168-11ea-8ee1-7bf97791cb8d.jpg)
+
 (Optional) I would advice moving the dictionary to an autoload for your full game project to not break paths easily in the future. I did on my own project but couldn't add it to this example and make it stand-alone without breaking a million things. Change the current way of getting the path on around codeline 182 in the 'Actor_Mesh_Equipment' script that needs the 'mesh_libary' to load the new meshes.
 
-4) Add key:value pairs to the 'blendshape_to_category' dictionary with the blendshape name as key and the intended equipmentslot as value
+### Step 4
+Add key:value pairs to the 'blendshape_to_category' dictionary with the blendshape name as key and the intended equipmentslot as value
+
 ![blendshape_setup](https://user-images.githubusercontent.com/52464204/71061559-977ba680-2168-11ea-8f93-9c924daa1178.jpg)
+
 (Optional) Replace the sometimes very ugly blendshape names by using the 'blendshape_renames' dictionary
 
-4) For the interface add as many 'Character_Asset_Button' instances as needed in the named gridcontainers for the bodyparts
+### Step 5
+For the interface add as many 'Character_Asset_Button' instances as needed in the named gridcontainers for the bodyparts
+
 ![asset_button_setup](https://user-images.githubusercontent.com/52464204/71061535-8cc11180-2168-11ea-8845-5f46cd045b52.jpg)
 
-5) Fill in the export variables, your key from the mesh_libary as the 'asset_id', choose a slot, a display name and drag in your image manually or do everything by code
+### Step 6
+Fill in the export variables, your key from the mesh_libary as the 'asset_id', choose a slot, a display name and drag in your image manually or do everything by code
+
 ![asset_export_vars](https://user-images.githubusercontent.com/52464204/71061670-de699c00-2168-11ea-8915-5241aee989c7.jpg)
 
-6) Open the 'Actor' Scene and replace the 'Skeleton' node with your own character skeleton. If you have to delete the placeholder children for this just add new MeshInstances again and name them the same or leave those out that you don't want to use (skin is mandatory).
+### Step 7
+Open the 'Actor' Scene and replace the 'Skeleton' node with your own character skeleton. If you have to delete the placeholder children for this just add new MeshInstances again and name them the same or leave those out that you don't want to use (skin is mandatory).
+
 ![actor_setup](https://user-images.githubusercontent.com/52464204/71070014-3066ed80-217a-11ea-9dec-eefacbe79d5c.jpg)
 
 
