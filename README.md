@@ -2,6 +2,8 @@
 # Godot 3D Character Editor with Blendshapes and Wardrobe
 Example project made with Godot 3.2 beta2
 
+No longer developed so archived.
+
 ![char_edit](https://user-images.githubusercontent.com/52464204/71067042-24782d00-2174-11ea-8abb-94a12e33e434.gif)
 
 ## Features | Examples:
@@ -63,8 +65,4 @@ Open the 'Actor' Scene and replace the 'Skeleton' node with your own character s
 
 
 ## License
-Roboto font has its own Apache license. MIT or my personal 'Don't care' license for the code and thumbnail images I made. Do whatever you want with this example and create something fun in 3d to overcome the 2d curse in godot god-dang it.
-## Known Issues
-I created the editor fast and dirty in a few hours and while it works there might be some ugly parts. Moved it from a larger project of mine to share and make it stand-alone but didn't test it for long, so might have missed a dependency. Added some quick code documentation full of typos and stupidity in the end, enjoy!
-
-On rare occasion pre-equipped clothing meshes on the actor bug out on first scene load for no apparent reason. The code doesn't touch them so might be some hidden issue elsewhere.
+Roboto font has its own Apache license. MIT for my stuff.
